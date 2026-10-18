@@ -1,0 +1,151 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="UserPage.master.cs" Inherits="User_UserPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+    <asp:ContentPlaceHolder ID ="title" runat="server">
+
+    </asp:ContentPlaceHolder>
+</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--
+Template 2059 curtain store
+http://www.tooplate.com/view/2059-curtain-store
+-->
+<link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "tooplate_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+    </head>
+<body>
+    <form id="form1" runat="server">
+      <div id="tooplate_wrapper">
+	<div id="tooplate_header">
+    	<div id="site_title">
+        	<h1><a href="#">Art Gallary</a></h1>
+        </div>
+        
+        <div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="UserHome.aspx">Home</a></li>
+                <li><a href="UserProfile.aspx"">Your Account</a>
+                    </li>
+               
+                <li><a href="#">Your Orders</a>
+                    <ul>
+                        <li><a href="OrderHistory.aspx">Tack Order</a></li>
+                        <li><a href="../Home/Home.aspx">Logout</a></li>
+                       
+                        </ul>
+              </li>
+                
+         
+            </ul>
+            
+            <br style="clear: left" />
+        </div> <!-- end of menu -->
+    
+    	<div id="tooplate_search">
+            <form action="#" method="get">
+              &nbsp;
+            </form>
+        </div>
+    </div>
+    
+    <div id="tooplate_main">
+    	<div id="tooplate_sidebar">
+        	<div class="sb_box">
+            	<h3>Categories</h3>
+            
+                <asp:DataList ID="DataList1" runat="server" DataKeyField="Cat_Id" DataSourceID="SqlDataSource1">
+                    <ItemTemplate>
+                         <ul class="sb_menu">
+                    <li><a href="ViewPaintingCategory.aspx?cid=<%# Eval("Cat_Id") %>"><%# Eval("Category_Name") %></a></li>
+                </ul>
+                       
+                    </ItemTemplate>
+                </asp:DataList>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:OnlineArtConnectionString %>" SelectCommand="SELECT [Cat_Id], [Category_Name] FROM [Category_Infoo]"></asp:SqlDataSource>
+
+			</div>
+            <div class="sb_box">
+            	<h3>Twitter</h3>
+            	<ul class="News">
+                  <li> Following Pushback, Neïl Beloufa Removes Image of Parker Bright from Palais de Tokyo Project</li>
+                    <li> Picturing Mississippi, 1817–2017’ at the Mississippi Museum of Art, Jackson </li>
+                    <li> Artisanal Abstraction: The Elusive, Effusive Art of Amy Sillman </li>
+          			
+                </ul>
+          	</div>
+        	<div class="sb_box">
+            	<h3>Get In Touch</h3>
+				<a href="#"><img src="images/facebook-32x32.png" title="facebook" alt="facebook" /></a>
+                <a href="#"><img src="images/flickr-32x32.png" title="flickr" alt="flickr" /></a>
+                <a href="#"><img src="images/twitter-32x32.png" title="twitter" alt="twitter" /></a>
+                <a href="#"><img src="images/youtube-32x32.png" title="youtube" alt="youtube" /></a>
+            </div>
+        </div> <!-- end of sidebar -->
+        
+            <div id="htmlcaption" class="nivo-html-caption">
+                <strong>This</strong> is an example of a HTML caption with <a href="#">a link</a>.
+            </div>
+
+            <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+            <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+            <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+            </script>
+        
+    	<div id="tooplate_content">
+        	
+        <asp:ContentPlaceHolder ID ="body" runat="server">
+
+        </asp:ContentPlaceHolder>
+            <div class="cleaner"></div>
+        </div> 
+        <!-- end of main -->
+        
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->	
+    
+    <div id="tooplate_footer">
+		Copyright &copy; <b><%= DateTime.Now.Year %></b>&nbsp;&nbsp;&nbsp;&nbsp; Designed & Developed By <b>Aman</b>
+    </div>
+</div>
+    
+    </form>
+</body>
+</html>

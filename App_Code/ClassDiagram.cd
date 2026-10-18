@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataClassesDataContext">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEIAAAUACAAAAAZBQAEiRAAAQAAAAAAAAACEBAABBA=</HashCode>
+      <FileName>App_Code\DataClassesDataContext.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_adapter" />
+      <Field Name="_connection" />
+      <Field Name="_sqlParameter" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlDataAdapter">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlConnection">
+    <Position X="6.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="System.Data.SqlClient.SqlParameter">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier />
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

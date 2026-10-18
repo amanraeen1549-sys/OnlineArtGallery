@@ -1,0 +1,152 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminPage.master.cs" Inherits="Admin_AdminPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+    <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+    <asp:ContentPlaceHolder ID="title" runat="server">
+
+    </asp:ContentPlaceHolder>
+</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<!--
+Template 2059 curtain store
+http://www.tooplate.com/view/2059-curtain-store
+-->
+<link href="css/tooplate_style.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
+<script language="javascript" type="text/javascript">
+function clearText(field)
+{
+    if (field.defaultValue == field.value) field.value = '';
+    else if (field.value == '') field.value = field.defaultValue;
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="css/ddsmoothmenu.css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js">
+
+</script>
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "tooplate_menu", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+
+</script>
+
+    </head>
+
+   
+<body>
+    <form id="form1" runat="server">
+        <div id="tooplate_wrapper">
+	<div id="tooplate_header">
+    	<div id="site_title">
+        	<h1><a href="#">Art Gallary</a></h1>
+        </div>
+        
+        <div id="tooplate_menu" class="ddsmoothmenu">
+            <ul>
+                <li><a href="index.html" class="selected">Home</a></li>
+                <li><a href="#">Add Products</a>
+                    <ul>
+                        <li><a href="ManageCategory.aspx">Manage Category?</a></li>
+                        <li><a href="ManageSubCat.aspx">Manage Sub?</a></li>
+                    <li><a href="MaangePainting.aspx">Add Painting?</a></li>
+                    </ul>
+                    
+                   
+                    </li>
+                <li><a href="../Home/Home.aspx">Logout</a>
+                    </li>
+                
+              <li><a href="Uploadbyartist.aspx">Upload By Artist</a></li> 
+              <li><a href="Quarry.aspx">Query</a></li>
+            </ul>
+            <br style="clear: left" />
+        </div> <!-- end of menu -->
+    
+    	</div>
+    
+    <div id="tooplate_main">
+    	<div id="tooplate_sidebar">
+        	<%--<div class="sb_box">
+            	<h3>Categories</h3>
+                <ul class="sb_menu">
+                    <li><a href="#">Animals</a></li>
+                    <li><a href="#">Nature</a></li>
+                    <li><a href="#">Oil Paintings</a></li>
+                    <li><a href="#">Anime</a></li>
+                  
+                </ul>
+			</div>
+            --%><div class="sb_box">
+            	<h3>News</h3>
+            	<ul class="twitter_post">
+                     <li> Following Pushback, Neïl Beloufa Removes Image of Parker Bright from Palais de Tokyo Project</li>
+                    <li> Picturing Mississippi, 1817–2017’ at the Mississippi Museum of Art, Jackson </li>
+                    <li> Artisanal Abstraction: The Elusive, Effusive Art of Amy Sillman </li>
+          			
+                   </ul>
+          	</div>
+        	<div class="sb_box">
+            	<h3>Get In Touch</h3>
+				<a href="#"><img src="images/facebook-32x32.png" title="facebook" alt="facebook" /></a>
+                <a href="#"><img src="images/flickr-32x32.png" title="flickr" alt="flickr" /></a>
+                <a href="#"><img src="images/twitter-32x32.png" title="twitter" alt="twitter" /></a>
+                <a href="#"><img src="images/youtube-32x32.png" title="youtube" alt="youtube" /></a>
+            </div>
+        </div> <!-- end of sidebar -->
+        
+        	<div id="slider" class="nivoSlider">
+                <img src="images/slider/01.jpg" alt="" title="Every artist was first an amateur”" />
+                <img src="images/slider/02.jpg" alt="" title="Creativity takes courage" />
+                <img src="images/slider/03.jpg" alt="" title="We don't take a photograph, we make it"/>
+                <img src="images/slider/04.jpg" alt="" title="Art enables us to find ourselves and lose ourselves at the same time." />
+            </div>
+         
+            <script type="text/javascript" src="js/jquery-1.4.3.min.js"></script>
+            <script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+            <script type="text/javascript">
+            $(window).load(function() {
+                $('#slider').nivoSlider();
+            });
+            </script>
+        
+    	<div id="tooplate_content">
+        	<asp:ContentPlaceHolder ID="body" runat="server">
+                
+        	</asp:ContentPlaceHolder>
+        
+            <div class="cleaner"></div>
+        </div> 
+        <!-- end of main -->
+        
+        <div class="cleaner"></div>
+    </div> <!-- end of main -->	
+    
+    <div id="tooplate_footer">
+		Copyright &copy; <b><%= DateTime.Now.Year %></b>&nbsp;&nbsp;&nbsp;&nbsp; Designed & Developed By <b>Aman</b>
+
+    </div>
+</div>
+
+
+
+       </form>
+</body>
+</html>
